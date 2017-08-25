@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import earthquakes from '../data/earthquakes.js'
-
 class EarthquakeList extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      features: []
+    }
+  }
+
+  componentDidMount() {
+    fetch("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson")
+      .then((response) => {
+        return response.json();
+      })
+      .then((results) => {
+        console.log(results);
+        this.setState({ features: results.features });
+      });
+  }
 
   render() {
 
-    fetch("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson").then((response) => {
-      console.log(response.json());
-    })
-
-    let quakes = earthquakes.features.map((quake) => {
+    let quakes = this.state.features.map((quake) => {
       return (
         <div className="col-sm-6" key={quake.id}>
           <div className="card" >

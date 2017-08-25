@@ -4,7 +4,7 @@
 
 .title {
   height: 80px;
-  padding-top: 20px;
+  padding: 20px;
   background-color: black;
   vertical-align: center;
 }
@@ -48,6 +48,7 @@
   text-shadow: 1px 1px 1px black;
   font-size: 30px;
   text-align: center;
+  padding: 50px;
   height: 200px;
   background-image: url('http://www.sanandreasfault.org/4020_A.jpg');
   background-position: center;

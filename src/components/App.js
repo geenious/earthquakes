@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="title">
-          <div className="my-header">Earthquakes!</div>
+          <h1 className="my-header">Earthquakes!</h1>
         </div>
         <EarthquakeInfo />
         <EarthquakeList />
